@@ -7,5 +7,6 @@ public class Main {
 //        String line = "Order ID: 113206638";
 //        line = line.replace("Order ID: ", "").trim();
 //        System.out.println(line);
+        ReceiptParser.Parse("./src/jsonformatter.txt");
     }
 }

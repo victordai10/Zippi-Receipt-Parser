@@ -1,0 +1,10 @@
+
+  {
+    "name": "Victor",
+    "city": "Albany",
+    "cars": [
+      "bmw",
+      "toyota"
+    ],
+    "job": "Software Engineer"
+  }
