@@ -1,0 +1,56 @@
+Order ID: EE1033D0
+Delivered
+Customer: Rakeem M
+Dasher
+Jacklyn D
+Pickup Time
+March 30, 2021 . 11:59 AM EDT
+Pickup Location
+779 Old Country Rd, Riverhead, NY 11901, USA
+Order Channel
+Marketplace
+Order Details
+1x
+Bacon, Sausage or Ham (Sides)
+Special Instructions "Bacon"
+$4.75
+1x
+Pancakes Platter (Breakfast Platters)
+Drink Choice: No Drink
+Bread Choice: Egg Buttered Bagel
+Protein Addition: Sausage ($1.26)
+$10.25
+1x
+Oven Gold Turkey Sandwich (Boar's Head Cold Cut Sandwiches)
+Topping Addition: Lettuce & Tomato ($1.25)
+Special Instructions "Only mayo tomato on white bread"
+$12.24
+1x
+Oven Gold Turkey Sandwich (Boar's Head Cold Cut Sandwiches)
+Topping Addition: Lettuce & Tomato ($1.25)
+Topping Addition: Cheese ($1.25)
+Special Instructions "Mayo No lettuce with Munster cheese"
+$13.49
+1x
+3 Egg Omelettes (3 Egg Omelettes)
+Drink Choice: Juice (Small) ($1.25)
+Preparation Addition: Onions ($1.00)
+Preparation Addition: Turkey ($1.00)
+Preparation Addition: Potatoes ($1.00)
+Preparation Addition: Mushrooms ($1.00)
+Preparation Addition: Ham ($1.00)
+Preparation Addition: American Cheese ($1.00)
+$13.74
+1x
+French Toast Platter (Breakfast Platters)
+Drink Choice: Juice (Small) ($1.25)
+Protein Addition: Sausage ($1.26)
+$11.50
+Subtotal
+$65.97
+Tax
+$5.69
+Estimated Payout
+$71.66
+Associated Transactions (1)
+Transaction #2050056290 Transfer 134529460 - Delivery$71.66

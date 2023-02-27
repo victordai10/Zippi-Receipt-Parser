@@ -6,5 +6,25 @@
       "bmw",
       "toyota"
     ],
-    "job": "Software Engineer"
+    "job": "Software Engineer",
+
+    "DeferDue": "ASAP",
+    "Delivery": "Pickup",
+    "DeliveryFee": 0,
+    "OrdState": "New Order",
+    "Subtotal": 13.40,
+    "Tax": 5.8,
+    "Tip": 10.0,
+    "Total": 30.45,
+    "categorieID":	"113206638",
+    "categoryName": "Dinner",
+    "creationDate": 2012,
+     "description": "Chef's Special",
+     "lastTimeUpdated": 2012,
+     "deliveryLogoURL": "URL",
+     "notificationToken": "19489485",
+    "restaurantID": "1394854",
+     "secondPrice": 0.0,
+     "taxRate": 5.3
+
   }
