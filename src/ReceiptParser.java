@@ -95,8 +95,14 @@ public class ReceiptParser {
                     System.out.println("first name: " + fName + "\nlast name:" +
                             " " + lName);
                 } else if (line.startsWith("Order Details")){
-                   String details = "";
+                   String detailLine = "";
+                   String dishName = "";
+                   double itemPrice = 0.0; // 2 vars for price?
+                   String description = "";
+                   int qty = 0;
+                   String specialInstructions = "";
                    while (scanner.hasNextLine()) {
+                        detailLine = scanner.nextLine();
 
                    }
                 }

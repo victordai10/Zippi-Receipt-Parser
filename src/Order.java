@@ -49,7 +49,7 @@ public class Order {
 //        }
     //} // end of customer
 
-    public class Option {
+    public static class Option {
         String optionName;
         double price;
         public class Ingredient {
