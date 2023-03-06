@@ -67,9 +67,11 @@ public class ReceiptParser {
 //        }
 
         try {
+            String line = "";
+            String prevLine = "";
             Scanner scanner = new Scanner(new File(fileName));
             while(scanner.hasNextLine()) {
-                String line = scanner.nextLine();
+                line = scanner.nextLine();
 //                System.out.println(line);
                 //access restaurant name from database
 
@@ -94,18 +96,55 @@ public class ReceiptParser {
                     customer.put("lastName", lName);
                     System.out.println("first name: " + fName + "\nlast name:" +
                             " " + lName);
-                } else if (line.startsWith("Order Details")){
-                   String detailLine = "";
+                }
+                else if (line.startsWith("Order Details")){
                    String dishName = "";
                    double itemPrice = 0.0; // 2 vars for price?
+                   ArrayList<Option> options = new ArrayList<>();
                    String description = "";
                    int qty = 0;
-                   String specialInstructions = "";
-                   while (scanner.hasNextLine()) {
-                        detailLine = scanner.nextLine();
+                   String specialInstruction = "";
+                   while (scanner.hasNextLine() && !line.equals("Subtotal")) {
+                        line = scanner.nextLine();
+                        // loop through each specific order
+                        while(scanner.hasNextLine() && !line.equals("Subtotal")) {
+                            //Get quantity of an order
+                            if(Character.isDigit(line.charAt(0)) && line.endsWith("x")) {
+                                qty = Integer.parseInt(line.substring(0, 1));
+                                System.out.println(qty);
+                            } // Get dish name and description
+                            else if(Character.isDigit(prevLine.charAt(0)) && prevLine.endsWith("x")) {
+                                int index = line.indexOf("(");
+                                dishName = line.substring(0, index).trim();
+                                description = line.substring(index + 1,
+                                        line.length() - 1).trim();
+                                System.out.println("Dish Name: " + dishName);
+                                System.out.println("Description: " + description);
+                            }
+                            else if(line.startsWith("$")) {
+                                itemPrice =  Double.parseDouble(line.substring(1));
+                                System.out.println(itemPrice);
+                                //add order to arrayList
+                                orders.add(new Order(dishName, itemPrice,
+                                        options.toArray(new Option[0]), 0, qty,
+                                        specialInstruction, description, "id"
+                                        , "image", "menuLogoURL"));
+                                break;
+                            }
+                            prevLine = line;
+                            line = scanner.nextLine();
+                        }
 
                    }
                 }
+                else if (prevLine.startsWith("Subtotal")) {
+                    System.out.println(line);
+                }
+                else if (prevLine.startsWith("Tax")) {
+                    System.out.println(line);
+                }
+
+                prevLine = line;
             }
             // fill in the default values
             scanner.close();
