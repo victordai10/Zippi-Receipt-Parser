@@ -1,0 +1,60 @@
+{
+    "asap": true,
+    "coords": [],
+    "creationDate": "",
+    "customRequirements": true,
+    "customer" : {
+        "Email": "btahlor@innovative-as.com",
+        "FirstName": "Barry",
+        "LastName": "Tahlor",
+        "MobilePhone": "6315236474",
+        "UserType": "customer",
+        "address": "255 Portland Rd, Atlantic Highlands, NJ 07716, USA",
+        "coords": []
+    },
+    "tokens" : ["tokenexample"],
+    "uid": "i67hb77KugTqWci4HTniH7XPIK82",
+    "deferDue": "February 27, 2023 at 7:17:59PM UTC-5",
+    "delivery": "Delivery",
+    "deliveryLogoUL": "https://firebasestorage.googleapis.com/v0/b/organify-72f15.appspot.com/o/CategorieImages%2FZippiYellowFINAL%20(2).png?alt=media&token=d8ceeafa-1198-43a4-b38c-22932c35d2f9",
+    "hub": {
+        "CategorieCheck": null,
+        "DishCheck": null,
+        "RestaurantCheck": null,
+        "coords": [],
+        "creationDate": "September 15, 2022 at 7:43:26AM UTC-4",
+        "get_distance": 0,
+        "id": "Yasser Test Hub2",
+        "latitude": 40.3993859,
+        "longitude": -74.053765,
+        "name": "Yasser Hub2",
+        "nameId": "Yasser Test Hub2",
+        "onFleetName": "",
+        "polygon_hub": null,
+        "polygon_lats": [],
+        "polygon_lngs": [],
+        "restaurants": [],
+        "timestamp": 0
+    },
+    "lastTimeUpdated": "",
+    "logs": [],
+    "onFleetTasksIdsFilter": [],
+    "ordState": "Pending",
+    "orderID": "IK821677543479741",
+    "payments": [{
+        "Amount": 38.48,
+        "CardType": "visa",
+        "Last4Digits": "4242",
+        "PayerName": "",
+        "PaymentType": "Credit",
+        "TransID": "ch_3MgGtGEeOcdgXs7K1G1hLyb9"
+        }],
+    "restaurantFilter": [],
+    "restaurants": [{}]
+
+
+    
+
+
+
+}
