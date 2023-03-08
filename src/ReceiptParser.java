@@ -24,7 +24,8 @@ public class ReceiptParser {
         JSONParser parser = new JSONParser();
         JSONObject order = new JSONObject();
 
-        HashMap<String, String> fields = new HashMap<>();
+        HashMap<String, String> strFields = new HashMap<>();
+        HashMap<String, Double> numFields = new HashMap<>();
 //        HashMap<String, Dish> orders = new HashMap<>();
         ArrayList<Order> orders = new ArrayList<>();
         HashMap<String, String> customer = new HashMap<>();
@@ -80,12 +81,12 @@ public class ReceiptParser {
                     // out of the string
                     line = line.replace("Order ID: ", "").trim();
                     line = line.replace("Order Number: ", "").trim();
-                    fields.put("orderID", line);
-                    System.out.println(fields.get("orderID"));
+                    strFields.put("orderID", line);
+                    System.out.println(strFields.get("orderID"));
                 }
                 else if(line.contains("Delivered")) {
-                    fields.put("delivery", "Delivery");
-                    System.out.println(fields.get("delivery"));
+                    strFields.put("delivery", "Delivery");
+                    System.out.println(strFields.get("delivery"));
                 }
                 else if(line.startsWith("Customer:")) {
                     String[] names =
@@ -120,13 +121,40 @@ public class ReceiptParser {
                                         line.length() - 1).trim();
                                 System.out.println("Dish Name: " + dishName);
                                 System.out.println("Description: " + description);
+                            } // Option handling
+                            else if (line.contains("Addition") || line.contains("Choice")) {
+                                String[] splitLine = line.split(":");
+                                String key = splitLine[0].trim();
+                                String value =
+                                        splitLine[1].trim().replace("(", "").replace(")", "");
+                                double optionPrice = 0.0;
+                                if(value.contains("$")) {
+                                    int index = value.indexOf("$");
+                                    optionPrice =
+                                            Double.parseDouble(value.substring(index + 1));
+                                    value = value.substring(0,
+                                            index);
+                                }
+                                System.out.println("OptionName: " + value);
+                                System.out.println("OptionPrice: " + optionPrice);
+                                options.add(new Option(value, optionPrice));
                             }
+                            else if (line.startsWith("Special Instructions")) {
+                                specialInstruction =
+                                        line.substring(20).trim();
+                                System.out.println(specialInstruction);
+                            } //Price of Order and adding final Order object
+                            // to order list
                             else if(line.startsWith("$")) {
                                 itemPrice =  Double.parseDouble(line.substring(1));
                                 System.out.println(itemPrice);
                                 //add order to arrayList
+                                Option[] opts = options.toArray(new Option[0]);
+//                                for (Option o : opts) {
+//                                    System.out.println( "optionName: " + o.optionName + ", price: " + o.price);
+//                                }
                                 orders.add(new Order(dishName, itemPrice,
-                                        options.toArray(new Option[0]), 0, qty,
+                                        opts, 0, qty,
                                         specialInstruction, description, "id"
                                         , "image", "menuLogoURL"));
                                 break;
@@ -138,14 +166,22 @@ public class ReceiptParser {
                    }
                 }
                 else if (prevLine.startsWith("Subtotal")) {
+                    line = line.replace("$", "");
+                    double subtotal = Double.parseDouble(line);
+                    numFields.put("subTotal", subtotal);
                     System.out.println(line);
+
                 }
                 else if (prevLine.startsWith("Tax")) {
+                    line = line.replace("$", "");
+                    double tax = Double.parseDouble(line);
+                    numFields.put("taxTotal", tax);
                     System.out.println(line);
                 }
 
                 prevLine = line;
             }
+
             // fill in the default values
             scanner.close();
         } catch(FileNotFoundException e) {

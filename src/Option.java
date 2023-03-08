@@ -13,12 +13,20 @@ public class Option {
             this.price = price;
         }
     }
-    Ingredient[] ingredients;
-    public Option(String optionName, double price,
-                  Ingredient[] ingredients) {
+    //Ingredient[] ingredients;
+    public Option(String optionName, double price) {
+        //, Ingredient[] ingredients
         this.optionName = optionName;
         this.price = price;
-        this.ingredients = ingredients;
+//        this.ingredients = ingredients;
+    }
+
+    public String toString(Option[] opts) {
+        String str = "";
+        for (Option o : opts) {
+            str += "optionName: " + o.optionName + ", price: " + o.price + "\n";
+        }
+        return str;
     }
 
 }
